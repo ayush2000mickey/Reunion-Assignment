@@ -25,13 +25,6 @@ export const getSelectedFilters = (filters) => {
   return selectedFilterKeys;
 };
 
-const initialFilter = {
-  bhk: [],
-  furnish: [],
-  preferredTenants: [],
-  location: [],
-};
-
 export const multiFilterHandler = (properties, filters) => {
   const filterKeys = Object.keys(filters);
   return properties.filter((property) => {
