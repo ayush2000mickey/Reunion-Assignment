@@ -33,8 +33,6 @@ const initialFilter = {
 };
 
 export const multiFilterHandler = (properties, filters) => {
-  console.log({ filters });
-  if (filters === initialFilter) return properties;
   const filterKeys = Object.keys(filters);
   return properties.filter((property) => {
     return filterKeys.every((key) => {

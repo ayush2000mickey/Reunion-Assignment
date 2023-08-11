@@ -12,7 +12,6 @@ const HomeHeader = () => {
       display="flex"
       alignItems="center"
       gap="1rem"
-      height="9vh"
     >
       <Icon as={SlEnvolopeLetter} boxSize={7} color="purple.400" />
       <Text fontSize="lg" pt="0.3rem" fontWeight={500}>

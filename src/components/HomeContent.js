@@ -62,20 +62,32 @@ const HomeContent = ({ dummyProperties }) => {
     setFilteredProperties(dummyProperties);
   }, [dummyProperties]);
 
-  console.log({ filteredProperties });
-
   return (
-    <Box height="91vh" px="10rem" py={4}>
-      <Text fontSize="4xl" fontWeight={600} height="4vh">
+    <Box
+      px={{ base: "1rem", md: "4rem" }}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      flexDirection="column"
+      py={4}
+    >
+      <Text fontSize={{ base: "1.5rem", md: "2rem" }} fontWeight={600}>
         Search Properties to Rent
       </Text>
-      <Grid templateColumns="repeat(5, 1fr)" gap={4} py={8} height="14vh">
-        <GridItem w="100%" h="10">
-          <Menu w="100%" closeOnSelect={false}>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} w="100%">
+      <Grid
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        flexWrap="wrap"
+        gap={4}
+        py={8}
+      >
+        <GridItem h="10">
+          <Menu closeOnSelect={false}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               BHK Type
             </MenuButton>
-            <MenuList minWidth="240px">
+            <MenuList>
               <MenuOptionGroup title="BHK Type" type="checkbox">
                 <MenuItemOption
                   isChecked={filters.bhk.bhk1}
@@ -109,12 +121,12 @@ const HomeContent = ({ dummyProperties }) => {
             </MenuList>
           </Menu>
         </GridItem>
-        <GridItem w="100%" h="10">
-          <Menu closeOnSelect={false} w="100%">
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} w="100%">
+        <GridItem h="10">
+          <Menu closeOnSelect={false}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               Furnishing
             </MenuButton>
-            <MenuList minWidth="240px">
+            <MenuList>
               <MenuOptionGroup title="Furnishing" type="checkbox">
                 <MenuItemOption
                   isChecked={filters.furnish.fully}
@@ -134,12 +146,12 @@ const HomeContent = ({ dummyProperties }) => {
             </MenuList>
           </Menu>
         </GridItem>
-        <GridItem w="100%" h="10">
-          <Menu closeOnSelect={false} w="100%">
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} w="100%">
+        <GridItem h="10">
+          <Menu closeOnSelect={false}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               Preferred Tenants
             </MenuButton>
-            <MenuList minWidth="240px">
+            <MenuList>
               <MenuOptionGroup title="Preferred Tenants" type="checkbox">
                 <MenuItemOption
                   isChecked={filters.preferredTenants.family}
@@ -172,12 +184,12 @@ const HomeContent = ({ dummyProperties }) => {
             </MenuList>
           </Menu>
         </GridItem>
-        <GridItem w="100%" h="10">
-          <Menu closeOnSelect={false} w="100%">
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />} w="100%">
+        <GridItem h="10">
+          <Menu closeOnSelect={false}>
+            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
               Location
             </MenuButton>
-            <MenuList minWidth="240px">
+            <MenuList>
               <MenuOptionGroup title="Location" type="checkbox">
                 <MenuItemOption
                   isChecked={filters.location.delhi}
@@ -218,8 +230,8 @@ const HomeContent = ({ dummyProperties }) => {
             </MenuList>
           </Menu>
         </GridItem>
-        <GridItem w="100%" h="10">
-          <Button w="100%" colorScheme="purple" onClick={applyFilterHandler}>
+        <GridItem h="10">
+          <Button colorScheme="purple" onClick={applyFilterHandler}>
             Search
           </Button>
         </GridItem>

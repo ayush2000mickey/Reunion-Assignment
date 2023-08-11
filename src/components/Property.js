@@ -3,12 +3,13 @@ import React from "react";
 
 const Property = ({ property }) => {
   return (
-    <Card>
+    <Card width="100%">
       <CardBody>
         <Image
           src={property.propertyImg}
           alt={property.propertyName}
           borderRadius="lg"
+          width="100%"
         />
         <Stack mt="6" spacing="1">
           <Heading size="md">{property.propertyName}</Heading>

@@ -7,7 +7,7 @@ const Properties = ({ properties }) => {
     <Box>
       {properties?.length <= 0 ? (
         <Box
-          height="70vh"
+          height="full"
           width="100%"
           display="flex"
           alignItems="center"
@@ -17,15 +17,19 @@ const Properties = ({ properties }) => {
         </Box>
       ) : (
         <Box
-          height="69vh"
+          height="100%"
           overflowY="scroll"
           display="grid"
-          gridTemplateColumns="repeat(3,1fr)"
+          gridTemplateColumns={{
+            base: "repeat(1,1fr)",
+            md: "repeat(2,1fr)",
+            lg: "repeat(3,1fr)",
+          }}
           className="property_list"
           gap="1rem"
         >
           {properties.map((property) => {
-            return <Property key={property.propertyName} property={property} />;
+            return <Property key={property.propertyId} property={property} />;
           })}
         </Box>
       )}
